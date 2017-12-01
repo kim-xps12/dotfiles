@@ -18,5 +18,10 @@ set autoindent
 filetype off
 filetype plugin indent on
 
+if expand("%:t") =~ ".*\.conf"
+  set noexpandtab
+  set tabstop=4
+  set shiftwidth=4
+endif
 
 autocmd BufNewFile *.py :0r $HOME/.vim/template/python.py | :echo "Python Template read."
